@@ -1,0 +1,378 @@
+---
+---
+
+@import "minima";
+
+// Light palette
+$pistachio: #93C572;
+$pistachio-dark: #7AB055;
+$bg-light: #fafafa;
+$text-primary: #1a1a1a;
+$text-secondary: #666666;
+$text-muted: #999999;
+$border: #e0e0e0;
+
+// Typography
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: $bg-light;
+  color: $text-primary;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+// Simplified header
+.site-header {
+  background: $bg-light;
+  border: none;
+  min-height: 50px;
+
+  .wrapper {
+    max-width: 680px;
+    padding: 20px 24px;
+  }
+
+  .site-title {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-secondary;
+    letter-spacing: 0.5px;
+
+    &:before {
+      content: '> ';
+      color: $pistachio;
+    }
+
+    &:hover {
+      color: $pistachio;
+      text-decoration: none;
+    }
+  }
+
+  .site-nav {
+    display: none; // Hide nav for single-page timeline
+  }
+}
+
+// Intro section
+.intro {
+  max-width: 680px;
+  margin: 20px auto 50px;
+  padding: 0 24px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: $text-primary;
+  }
+
+  p {
+    font-size: 18px;
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .links {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+
+    .social-link {
+      color: $text-secondary;
+      text-decoration: none;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $pistachio-dark;
+      }
+    }
+  }
+}
+
+// Timeline
+.timeline {
+  max-width: 680px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 80px 80px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid $border;
+
+    &:hover {
+      background: rgba(147, 197, 114, 0.03);
+    }
+
+    .date {
+      font-size: 14px;
+      color: $text-muted;
+    }
+
+    .type {
+      font-size: 11px;
+      color: $text-muted;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      color: $text-primary;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+
+      &:hover {
+        color: $pistachio-dark;
+      }
+    }
+
+    .desc {
+      grid-column: 3;
+      font-size: 14px;
+      color: $text-secondary;
+      margin-top: 6px;
+      line-height: 1.5;
+
+      a {
+        color: $pistachio-dark;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// About section (bottom)
+.about {
+  max-width: 680px;
+  margin: 80px auto 100px;
+  padding: 32px 24px;
+  border-top: 2px solid $pistachio;
+
+  p {
+    font-size: 16px;
+    color: $text-secondary;
+    line-height: 1.7;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Post content (for blog posts)
+.post-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: 17px;
+  line-height: 1.7;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 56px;
+    margin-bottom: 20px;
+    color: $text-primary;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    color: $text-primary;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: $text-primary;
+  }
+
+  a {
+    color: $pistachio-dark;
+    text-decoration: none;
+    border-bottom: 1px solid $pistachio;
+
+    &:hover {
+      color: $pistachio;
+    }
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  code {
+    background: #f5f5f5;
+    color: $pistachio-dark;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-family: 'Courier New', monospace;
+    border: 1px solid $border;
+  }
+
+  pre {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 4px;
+    overflow-x: auto;
+    border-left: 2px solid $pistachio;
+    margin: 28px 0;
+
+    code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: $text-primary;
+    }
+  }
+
+  blockquote {
+    border-left: 2px solid $pistachio;
+    padding-left: 20px;
+    margin: 28px 0;
+    color: $text-secondary;
+    font-style: italic;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 28px 0;
+    border-radius: 4px;
+  }
+
+  table {
+    width: 100%;
+    margin: 28px 0;
+    border-collapse: collapse;
+    border: 1px solid $border;
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid $border;
+    }
+
+    th {
+      font-weight: 600;
+      color: $text-primary;
+      background: #f8f8f8;
+    }
+
+    img {
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
+  ul, ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+
+    li {
+      margin-bottom: 8px;
+      color: $text-primary;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $border;
+    margin: 48px 0;
+  }
+}
+
+.post-header {
+  max-width: 680px;
+  margin: 60px auto 48px;
+  padding: 0 24px;
+
+  .post-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .post-meta {
+    font-size: 14px;
+    color: $text-muted;
+  }
+}
+
+// Footer - hidden
+.site-footer {
+  display: none;
+}
+
+// Wrapper
+.wrapper {
+  max-width: 680px;
+}
+
+// Links
+a {
+  transition: all 0.2s ease;
+}
+
+// Selection
+::selection {
+  background: $pistachio;
+  color: white;
+}
+
+// Responsive
+@media screen and (max-width: 800px) {
+  .intro {
+    margin: 40px auto 60px;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
+
+  .timeline .timeline-item {
+    grid-template-columns: 70px 70px 1fr;
+    gap: 12px;
+    padding: 14px 0;
+
+    .date {
+      font-size: 13px;
+    }
+
+    .type {
+      font-size: 12px;
+    }
+
+    a {
+      font-size: 15px;
+    }
+
+    .desc {
+      font-size: 13px;
+    }
+  }
+
+  .post-header .post-title {
+    font-size: 28px;
+  }
+}
