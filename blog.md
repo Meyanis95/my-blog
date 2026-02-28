@@ -4,8 +4,8 @@ title: Blog
 permalink: /blog/
 ---
 
-<div style="max-width: 700px; margin: 0 auto;">
-  <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 48px; margin-top: 40px;">Writing</h1>
+<div class="blog-page">
+  <h1 class="blog-heading">Writing</h1>
 
   <div class="post-list">
     {% for post in site.posts %}

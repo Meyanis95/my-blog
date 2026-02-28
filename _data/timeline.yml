@@ -1,0 +1,82 @@
+# Timeline entries
+# type: writing | talk | project
+# url: use full https:// for external links, /YYYY/MM/DD/slug.html for posts
+# sort_date: YYYY-MM — controls display order (newest first), not shown in UI
+
+- date: "04/25"
+  sort_date: "2025-04"
+  type: writing
+  title: "Introducing Trinity: Two-Party Computation for the ZK Era"
+  url: "/2025/04/15/introducing-trinity.html"
+
+- date: "08/25"
+  sort_date: "2025-08"
+  type: project
+  title: "IPTF"
+  url: "https://iptf.ethereum.org/"
+  desc: 'Institutional privacy research and PoCs. Built <a href="https://iptf.ethereum.org/building-private-bonds-on-ethereum/" target="_blank">private bonds</a> prototype.'
+
+- date: "07/25"
+  sort_date: "2025-07"
+  type: talk
+  title: "Trinity: Next-Gen 2PC and ZK Data Provenance"
+  url: "https://www.youtube.com/watch?v=uWdUgADLM7Q"
+
+- date: "01/25"
+  sort_date: "2025-01"
+  type: project
+  title: "Trinity"
+  url: "https://github.com/privacy-ethereum/Trinity"
+  desc: "Next-gen 2PC and ZK data provenance. Research & implementation at EF."
+
+- date: "12/24"
+  sort_date: "2024-12"
+  type: writing
+  title: "A Glimpse into ProgCrypto's Future"
+  url: "/2024/12/05/a-glimpse-into-progcrypto-future.html"
+
+- date: "11/25"
+  sort_date: "2025-11"
+  type: talk
+  title: "Institutional Privacy on Ethereum"
+  url: "https://www.youtube.com/watch?v=AO2sjCeIbXc"
+  desc: "Introducing IPTF, helping financial institutions adopt Ethereum without compromising privacy. Privacy patterns, architectures, and jurisdictional guides for the tokenization era."
+
+- date: "11/24"
+  sort_date: "2024-11"
+  type: writing
+  title: "SelfAttestHub: A Port From ProgCrypto to Verifiable Credentials"
+  url: "/2024/11/05/selfattesthub-progcrypto-to-verifiable-credentials.html"
+
+- date: "11/24"
+  sort_date: "2024-11"
+  type: talk
+  title: "Bringing Real World Identities On-Chain"
+  url: "https://www.youtube.com/watch?v=X3fJw5yM4PE"
+
+- date: "12/23"
+  sort_date: "2023-12"
+  type: talk
+  title: "Anon Aadhaar — Devfolio Hackathon India"
+  url: "https://www.youtube.com/watch?v=NEPCiSDwUjM"
+
+- date: "06/23"
+  sort_date: "2023-06"
+  type: project
+  title: "Anon Aadhaar"
+  url: "https://github.com/anon-aadhaar"
+  desc: "Privacy-preserving identity for India's Aadhaar system. Team lead & engineer at EF."
+
+- date: "2022"
+  sort_date: "2022-07"
+  type: project
+  title: "Sinaxyz Labs"
+  url: "https://github.com/Meyanis95"
+  desc: "Founded a web3 lab. Built and shipped across the stack before joining EF."
+
+- date: "2022"
+  sort_date: "2022-03"
+  type: project
+  title: "NFTIZ"
+  url: "https://github.com/Meyanis95"
+  desc: "Figma plugin to mint NFTs directly from design. ETHGlobal Web3Jam winner, best media hack by Filecoin."

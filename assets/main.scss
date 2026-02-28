@@ -1,166 +1,245 @@
 ---
 ---
 
+// ---- Minima variable overrides (must come before @import) ----
+$background-color:  #0C0C0F;
+$text-color:        #E8E9EC;
+$link-color:        #E8E9EC;
+$brand-color:       #4A9678;
+$grey-color:        #B8BCC2;
+$grey-color-light:  #1E202A;
+$grey-color-dark:   #6B7280;
+$on-palm:           600px;
+$on-laptop:         800px;
+$content-width:     720px;
+$base-font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$base-font-size:   16px;
+$base-line-height: 1.75;
+
 @import "minima";
 
-// Light palette
-$pistachio: #93C572;
-$pistachio-dark: #7AB055;
-$bg-light: #fafafa;
-$text-primary: #1a1a1a;
-$text-secondary: #666666;
-$text-muted: #999999;
-$border: #e0e0e0;
+// ---- Color tokens ----
+$bg-base:           #0C0C0F;
+$bg-surface:        #15161A;
+$bg-hover:          #15171E;
+$emerald:           #1C3A33;
+$emerald-text:      #3D8B6E;
+$amber:             #D4802D;
+$silver:            #B8BCC2;
+$text-primary:      #E8E9EC;
+$text-secondary:    #B8BCC2;
+$text-muted:        #6B7280;
+$border:            #1E202A;
 
-// Typography
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: $bg-light;
-  color: $text-primary;
-  line-height: 1.6;
-  font-size: 16px;
+// ---- Base ----
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-// Simplified header
+html, body {
+  background: $bg-base;
+}
+
+body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: $text-primary;
+  line-height: 1.75;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ---- Header ----
 .site-header {
-  background: $bg-light;
-  border: none;
-  min-height: 50px;
+  background: $bg-base;
+  border-bottom: 1px solid $border;
+  border-top: none;
+  min-height: 52px;
 
   .wrapper {
-    max-width: 680px;
-    padding: 20px 24px;
+    max-width: 720px;
+    padding: 18px 24px;
   }
 
   .site-title {
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: 600;
-    color: $text-secondary;
-    letter-spacing: 0.5px;
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: $text-muted;
+    letter-spacing: 0.3px;
+    text-decoration: none;
 
     &:before {
-      content: '> ';
-      color: $pistachio;
+      content: none;
+    }
+
+    &:visited {
+      color: $text-muted;
     }
 
     &:hover {
-      color: $pistachio;
+      color: $text-secondary;
       text-decoration: none;
     }
   }
 
   .site-nav {
-    display: none; // Hide nav for single-page timeline
+    display: none;
   }
 }
 
-// Intro section
+// ---- Intro ----
 .intro {
-  max-width: 680px;
-  margin: 20px auto 50px;
+  max-width: 720px;
+  margin: 72px auto 80px;
   padding: 0 24px;
 
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 16px;
+  .intro-name {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
     color: $text-primary;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 24px;
   }
 
   p {
     font-size: 18px;
     color: $text-secondary;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    line-height: 1.7;
+    margin-bottom: 0;
+    max-width: 480px;
   }
 
   .links {
     display: flex;
-    gap: 16px;
-    margin-top: 24px;
+    gap: 18px;
+    margin-top: 32px;
 
     .social-link {
-      color: $text-secondary;
+      color: $text-muted;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
 
       &:hover {
-        color: $pistachio-dark;
+        color: $amber;
       }
     }
   }
 }
 
-// Timeline
+// ---- Timeline ----
 .timeline {
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto 80px;
   padding: 0 24px;
 
   .timeline-item {
-    display: grid;
-    grid-template-columns: 80px 80px 1fr;
-    gap: 16px;
-    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 0;
     border-bottom: 1px solid $border;
+    transition: background 0.12s ease;
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
 
     &:hover {
-      background: rgba(147, 197, 114, 0.03);
+      background: $bg-hover;
+      margin: 0 -14px;
+      padding-left: 14px;
+      padding-right: 14px;
+      border-bottom-color: transparent;
+      border-radius: 3px;
+    }
+
+    .timeline-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .date {
-      font-size: 14px;
+      font-size: 12px;
       color: $text-muted;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.2px;
     }
 
     .type {
-      font-size: 11px;
-      color: $text-muted;
-      font-weight: 400;
+      font-size: 10px;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.7px;
+      padding: 2px 8px;
+      border-radius: 20px;
+
+      &.type--writing {
+        color: $text-muted;
+        background: rgba(184, 188, 194, 0.08);
+      }
+
+      &.type--talk {
+        color: $amber;
+        background: rgba(212, 128, 45, 0.12);
+      }
+
+      &.type--project {
+        color: $emerald-text;
+        background: rgba(28, 58, 51, 0.35);
+      }
     }
 
-    a {
+    > a {
       color: $text-primary;
       text-decoration: none;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 400;
+      line-height: 1.45;
 
       &:hover {
-        color: $pistachio-dark;
+        color: $amber;
       }
     }
 
     .desc {
-      grid-column: 3;
-      font-size: 14px;
-      color: $text-secondary;
-      margin-top: 6px;
-      line-height: 1.5;
+      font-size: 13px;
+      color: $text-muted;
+      line-height: 1.65;
+      margin-top: 2px;
 
       a {
-        color: $pistachio-dark;
-        font-size: 14px;
+        color: $emerald-text;
+        font-size: 13px;
         font-weight: 400;
+        text-decoration: none;
+
+        &:hover {
+          color: $amber;
+        }
       }
     }
   }
 }
 
-// About section (bottom)
+// ---- About ----
 .about {
-  max-width: 680px;
-  margin: 80px auto 100px;
-  padding: 32px 24px;
-  border-top: 2px solid $pistachio;
+  max-width: 720px;
+  margin: 48px auto 100px;
+  padding: 40px 24px 0;
+  border-top: 1px solid $border;
 
   p {
-    font-size: 16px;
-    color: $text-secondary;
-    line-height: 1.7;
-    margin-bottom: 16px;
+    font-size: 14px;
+    color: $text-muted;
+    line-height: 1.85;
+    margin-bottom: 14px;
+    max-width: 520px;
 
     &:last-child {
       margin-bottom: 0;
@@ -168,98 +247,139 @@ body {
   }
 }
 
-// Post content (for blog posts)
+// ---- Post header ----
+.post-header {
+  max-width: 720px;
+  margin: 72px auto 52px;
+  padding: 0 24px;
+
+  .post-title {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: $text-primary;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .post-meta {
+    font-size: 13px;
+    color: $text-muted;
+    letter-spacing: 0.3px;
+  }
+}
+
+// ---- Post content ----
 .post-content {
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 24px;
   font-size: 17px;
-  line-height: 1.7;
+  line-height: 1.8;
+  color: $text-secondary;
 
   h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-top: 56px;
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 60px;
     margin-bottom: 20px;
     color: $text-primary;
+    letter-spacing: -0.2px;
   }
 
   h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 40px;
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 44px;
     margin-bottom: 16px;
     color: $text-primary;
   }
 
   h4 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 32px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 36px;
     margin-bottom: 12px;
     color: $text-primary;
   }
 
   a {
-    color: $pistachio-dark;
+    color: $text-secondary;
     text-decoration: none;
-    border-bottom: 1px solid $pistachio;
+    border-bottom: 1px solid $emerald;
+    transition: color 0.15s ease, border-color 0.15s ease;
 
     &:hover {
-      color: $pistachio;
+      color: $amber;
+      border-bottom-color: $amber;
     }
   }
 
   p {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+  }
+
+  strong {
+    color: $text-primary;
+    font-weight: 500;
   }
 
   code {
-    background: #f5f5f5;
-    color: $pistachio-dark;
-    padding: 3px 8px;
+    background: $bg-surface;
+    color: $silver;
+    padding: 2px 7px;
     border-radius: 3px;
-    font-size: 15px;
-    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
     border: 1px solid $border;
   }
 
   pre {
-    background: #f8f8f8;
-    padding: 20px;
+    background: $bg-surface;
+    padding: 20px 24px;
     border-radius: 4px;
     overflow-x: auto;
-    border-left: 2px solid $pistachio;
-    margin: 28px 0;
+    border-left: 2px solid $emerald-text;
+    margin: 32px 0;
 
     code {
       background: none;
       padding: 0;
       border: none;
-      color: $text-primary;
+      color: $text-secondary;
+      font-size: 14px;
     }
   }
 
   blockquote {
-    border-left: 2px solid $pistachio;
+    border-left: 2px solid $amber;
     padding-left: 20px;
-    margin: 28px 0;
-    color: $text-secondary;
-    font-style: italic;
+    margin: 32px 0;
+    color: $text-muted;
+    font-style: normal;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   img {
     max-width: 100%;
     height: auto;
-    margin: 28px 0;
+    margin: 32px 0;
     border-radius: 4px;
+    opacity: 0.9;
   }
 
   table {
     width: 100%;
-    margin: 28px 0;
+    margin: 32px 0;
     border-collapse: collapse;
     border: 1px solid $border;
+    font-size: 15px;
 
     th, td {
       padding: 12px 16px;
@@ -268,9 +388,16 @@ body {
     }
 
     th {
-      font-weight: 600;
+      font-weight: 500;
       color: $text-primary;
-      background: #f8f8f8;
+      background: $bg-surface;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    td {
+      color: $text-secondary;
     }
 
     img {
@@ -280,99 +407,154 @@ body {
   }
 
   ul, ol {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     padding-left: 24px;
 
     li {
       margin-bottom: 8px;
-      color: $text-primary;
+      color: $text-secondary;
     }
   }
 
   hr {
     border: none;
     border-top: 1px solid $border;
-    margin: 48px 0;
+    margin: 60px 0;
   }
 }
 
-.post-header {
-  max-width: 680px;
-  margin: 60px auto 48px;
+// ---- Blog page ----
+.blog-page {
+  max-width: 720px;
+  margin: 0 auto;
   padding: 0 24px;
+}
 
-  .post-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: $text-primary;
-    margin-bottom: 12px;
-    line-height: 1.2;
-  }
+.blog-heading {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: $text-primary;
+  margin-top: 64px;
+  margin-bottom: 48px;
+  letter-spacing: -0.2px;
+}
 
-  .post-meta {
-    font-size: 14px;
-    color: $text-muted;
+// ---- Blog list ----
+.post-list {
+  .post-item {
+    padding: 28px 0;
+    border-bottom: 1px solid $border;
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+
+    h3 {
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0 0 8px;
+
+      a {
+        color: $text-primary;
+        text-decoration: none;
+
+        &:hover {
+          color: $amber;
+        }
+      }
+    }
+
+    .post-meta {
+      font-size: 13px;
+      color: $text-muted;
+      margin-bottom: 10px;
+    }
+
+    .post-excerpt {
+      font-size: 14px;
+      color: $text-muted;
+      line-height: 1.7;
+    }
   }
 }
 
-// Footer - hidden
+// ---- Footer ----
 .site-footer {
   display: none;
 }
 
-// Wrapper
+// ---- Wrapper ----
 .wrapper {
-  max-width: 680px;
+  max-width: 720px;
 }
 
-// Links
+// ---- Global link reset ----
 a {
-  transition: all 0.2s ease;
+  transition: color 0.15s ease;
 }
 
-// Selection
+// ---- Selection ----
 ::selection {
-  background: $pistachio;
-  color: white;
+  background: $emerald;
+  color: $text-primary;
 }
 
-// Responsive
+// ---- Syntax highlight overrides (dark) ----
+.highlight {
+  background: $bg-surface !important;
+}
+
+.highlighter-rouge .highlight {
+  background: $bg-surface !important;
+}
+
+// ---- Scrollbar ----
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-base;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border;
+  border-radius: 3px;
+
+  &:hover {
+    background: $text-muted;
+  }
+}
+
+// ---- Responsive ----
 @media screen and (max-width: 800px) {
   .intro {
-    margin: 40px auto 60px;
+    margin: 48px auto 56px;
 
-    h1 {
-      font-size: 32px;
+    .intro-name {
+      font-size: 40px;
     }
 
     p {
-      font-size: 17px;
+      font-size: 16px;
     }
   }
 
   .timeline .timeline-item {
-    grid-template-columns: 70px 70px 1fr;
-    gap: 12px;
-    padding: 14px 0;
+    padding: 20px 0;
 
-    .date {
-      font-size: 13px;
-    }
-
-    .type {
-      font-size: 12px;
-    }
-
-    a {
-      font-size: 15px;
-    }
-
-    .desc {
-      font-size: 13px;
-    }
+    > a    { font-size: 15px; }
+    .desc  { font-size: 12px; }
   }
 
   .post-header .post-title {
     font-size: 28px;
+  }
+
+  .post-content {
+    font-size: 16px;
   }
 }
